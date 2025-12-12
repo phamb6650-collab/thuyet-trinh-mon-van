@@ -1,0 +1,155 @@
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Main content container */
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    /* Hiệu ứng chuyển màu động */
+    background: linear-gradient(-45deg, #d9534f, #c9302c, #d9534f);
+    background-size: 400% 400%;
+    animation: moveGradient 15s ease infinite;
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+/* Section Styles */
+section {
+    background: #fff;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #d9534f;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Grid layout for the icons section */
+#cac-bieu-tuong {
+    display: grid;
+    grid-template-columns: 1fr; /* Luôn hiển thị một cột duy nhất */
+    gap: 20px;
+}
+
+/* Card styles for each icon article */
+#cac-bieu-tuong article {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    /* Trạng thái ban đầu cho hiệu ứng hoạt hình */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.2s;
+}
+
+/* Lớp này sẽ được thêm bằng JavaScript khi phần tử hiển thị */
+#cac-bieu-tuong article.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#cac-bieu-tuong article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+h3 {
+    margin-top: 0;
+    color: #555;
+}
+
+/* Image styles */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid #e0e0e0; /* Thêm đường viền xám nhạt */
+    padding: 5px; /* Tạo khoảng cách giữa ảnh và viền */
+    background-color: #fff; /* Màu nền cho khoảng đệm */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* Thêm hiệu ứng đổ bóng */
+}
+
+/* Styles for the troubleshooting section */
+#xu-ly-su-co ol {
+    padding-left: 20px;
+}
+
+#xu-ly-su-co li {
+    margin-bottom: 10px;
+}
+
+#xu-ly-su-co ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+#xu-ly-su-co strong {
+    color: #c9302c;
+}
+
+/* Center the last image in the troubleshooting section */
+#xu-ly-su-co > img {
+    display: block;
+    margin: 20px auto 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        margin: 10px auto;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    #cac-bieu-tuong {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Keyframes cho hiệu ứng chuyển màu */
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
